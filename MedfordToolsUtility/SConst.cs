@@ -2,11 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
-//using ESRI.ArcGIS.esriSystem;
-//using ESRI.ArcGIS.Catalog;
-//using ESRI.ArcGIS.Carto;
-//using ESRI.ArcGIS.Geometry;
-//using ESRI.ArcGIS.Geodatabase;
 using System.IO;
 using System.Collections;
 using System.Security.Principal;
@@ -59,7 +54,6 @@ namespace MedfordToolsUtility
         }
 
         // Changed
-        //      DJR ::: 5/13/2009
         //          --- changed the way settings files are split up
         //              the single file was a little cumbersome
         public static string DataSettingsLocation
@@ -75,7 +69,6 @@ namespace MedfordToolsUtility
         }
 
         // Changed
-        //      DJR ::: 5/13/2009
         //          --- changed the way settings files are split up
         //              the single file was a little cumbersome
         public static string LayerSettingsLocation
@@ -153,7 +146,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -161,7 +153,7 @@ namespace MedfordToolsUtility
         {
             get
             {
-                return CMedToolsSubs.returnSettingValue("GISConnString", DataSettingsLocation); //"Server=MEDSDE-1\\MEDGISPROD;Database=GIS;User ID=webuser;Password=tabl3t!;";
+                return CMedToolsSubs.returnSettingValue("GISConnString", DataSettingsLocation); 
             }
         }
 
@@ -176,7 +168,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         ///
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -184,7 +175,7 @@ namespace MedfordToolsUtility
         {
             get
             {
-                return CMedToolsSubs.returnSettingValue("LXConnString", DataSettingsLocation); //"Server=MEDSDE-1\\MEDGISPROD;Database=LXMaster;User ID=webuser;Password=tabl3t!;";
+                return CMedToolsSubs.returnSettingValue("LXConnString", DataSettingsLocation); 
             }
         }
 
@@ -198,7 +189,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         ///
-        ///  5-13-2009
         ///  DJR
         ///      -- added so that we can query sde database attributes
         /// -----------------------------------------------------------------
@@ -221,7 +211,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -229,7 +218,7 @@ namespace MedfordToolsUtility
         {
             get
             {
-                return CMedToolsSubs.returnSettingValue("Taxlots_FullName", DataSettingsLocation); //"MEDSDE.DBO.TAXLOTS";
+                return CMedToolsSubs.returnSettingValue("Taxlots_FullName", DataSettingsLocation); 
             }
         }
 
@@ -243,7 +232,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -251,7 +239,7 @@ namespace MedfordToolsUtility
         {
             get
             {
-                return CMedToolsSubs.returnSettingValue("Taxlots_FullName", DataSettingsLocation);  //"MEDSDE.DBO.Tax_Lots";
+                return CMedToolsSubs.returnSettingValue("Taxlots_FullName", DataSettingsLocation);  
             }
         }
 
@@ -265,7 +253,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         ///
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file  (so that we can support laptops)
         /// -----------------------------------------------------------------
@@ -273,7 +260,7 @@ namespace MedfordToolsUtility
         {
             get
             {
-                return CMedToolsSubs.returnSettingValue("Taxlots_LayerName", DataSettingsLocation); //"Tax_Lots_Outlines";
+                return CMedToolsSubs.returnSettingValue("Taxlots_LayerName", DataSettingsLocation); 
             }
         }
 
@@ -287,11 +274,8 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
-        ///      -- changed to read from Settings.xml file (so that we can support laptops)
-        ///      
-        ///  5-13-2009
+        ///      -- changed to read from Settings.xml file (so that we can support laptops) 
         ///     -- changed to get these values from db (no longer need to support laptop support)
         /// -----------------------------------------------------------------
         public static Collection<string> CountyStreets 
@@ -338,36 +322,6 @@ namespace MedfordToolsUtility
             }
         }
 
-        ///// <summary>
-        /////     Name:
-        /////         DefaultLayerLocation
-        ///// 
-        /////     Description:
-        /////         This is the default location of the layer files 
-        /////         It is here so that users can revert to the default , should they change it.
-        ///// </summary>
-        ///// 
-        ///// -----------------------------------------------------------------
-        ///// notes/rev:
-        /////
-        /////  4-18-2008
-        /////  DJR
-        /////      -- changed to read from Settings.xml file
-        ///// -----------------------------------------------------------------
-        //public static string DefaultLayerLocation
-        //{
-        //    get
-        //    {
-        //        // --------------------------
-        //        //  4-18-2008
-        //        //  DJR
-        //        //      -- changed to read from Settings.xml file
-        //        // --------------------------
-        //        return CMedToolsSubs.returnSettingValue("Default_Layer_Location");  //"\\\\medgis\\GISData\\GIS\\Layers\\";
-        //    }
-        //}
-
-
         /// <summary>
         ///     Name:
         ///         PlanningLayers
@@ -379,7 +333,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -402,7 +355,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -426,7 +378,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -474,7 +425,6 @@ namespace MedfordToolsUtility
         /// -----------------------------------------------------------------
         /// notes/rev:
         /// 
-        ///  4-18-2008
         ///  DJR
         ///      -- changed to read from Settings.xml file
         /// -----------------------------------------------------------------
@@ -494,64 +444,6 @@ namespace MedfordToolsUtility
                 return CMedToolsSubs.returnConfigNode("Layer", "@type='Common'", LayerSettingsLocation);  //dctPlanLayers;
             }
         }
-
-        /// <summary>
-        ///     Name:
-        ///         CityTaxcode
-        /// 
-        ///     Description:
-        ///         This is the list of Taxcodes and 
-        ///         the cities that are attached to them
-        /// </summary>
-        /// -----------------------------------------------------------------
-        /// notes/rev:
-        /// 
-        //public static Dictionary<string, string> CityTaxcode
-        //{
-        //    get
-        //    {
-        //        CData oData = new CData(GISConnString);
-        //        System.Data.DataSet ds = oData.returnTaxCode();
-
-        //        Dictionary<string, string> dct = new Dictionary<string,string>(ds.Tables[0].Rows.Count);
-
-        //        foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
-        //        {
-        //            dct.Add(dr["Tax_Code"].ToString(), dr["City"].ToString());
-        //        }
-
-        //        return dct; //CMedToolsSubs.returnConfigNode("TaxCode", "", SettingsLocation);
-        //    }
-        //}
-
-
-                /// <summary>
-        ///     Name:
-        ///         PropClass
-        /// 
-        ///     Description:
-        ///         This is the list of Propclasses and descriptions
-        /// </summary>
-        /// -----------------------------------------------------------------
-        /// notes/rev:
-        /// 
-        //public static Dictionary<string, string> PropClass
-        //{
-        //    get
-        //    {
-        //        CData oData = new CData(GISConnString);
-        //        System.Data.DataSet ds = oData.returnTaxCode();
-
-        //        Dictionary<string, string> dct = new Dictionary<string, string>(ds.Tables[0].Rows.Count);
-
-        //        foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
-        //        {
-        //            dct.Add(dr["CLASS"].ToString(), dr["CLASS_DESC"].ToString());
-        //        }
-
-        //        return dct;  //CMedToolsSubs.returnConfigNode("PropClass", "", SettingsLocation);
-        //    }
-        //}
 
         /// <summary>
         ///     Name:

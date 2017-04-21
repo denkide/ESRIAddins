@@ -1,0 +1,85 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Medford GISAddin</Name>
+  <AddInID>{770b6b93-aa21-4021-93b6-51d74fcce31c}</AddInID>
+  <Description>A suite of tools for ArcGIS for City Of Medford employees</Description>
+  <Version>1.2.3</Version>
+  <Image>Images\Medford_GISAddin.png</Image>
+  <Author>David Renz</Author>
+  <Company>City of Medford GIS</Company>
+  <Date>2/20/2013</Date>
+  <Targets>
+    <Target name="Desktop" version="10.0" />
+  </Targets>
+  <AddIn language="CLR" library="Medford_GISAddin.dll" namespace="Medford_GISAddin">
+    <ArcMap>
+      <Commands>
+        <Button id="CoM_AddLayers" 
+                onDemand="false" 
+                class="CAddLayers" 
+                caption="Add a layer" 
+                category="City of Medford: Addins" 
+                image="Images\AddLayer.png" 
+                tip="Add a layer" 
+                message="Add a layer">
+          <Help heading="Add-in button">Check a box then click close</Help>
+        </Button>
+        <Button id="CoM_CPrintMap" 
+                class="CPrintMap" 
+                message="Print a map" 
+                caption="Print Map" 
+                tip="Print a map" 
+                category="City of Medford: GIS Toolbar" 
+                onDemand="false" 
+                image="Images\PrintMap.png" />
+        <Button id="CoM_CDataFrame" 
+                onDemand="false" 
+                class="CDataFrame" 
+                message="Add a data frame" 
+                caption="Add a data frame" 
+                tip="Add a data frame" 
+                category="City of Medford: GIS Toolbar" 
+                image="Images\dataFrame.png" />
+        <Button id="CoM_CTaxlotSearch" 
+                onDemand="false" 
+                class="CTaxlotSearch" 
+                message="Search for taxlot information" 
+                caption="Taxlot Search" 
+                tip="Search for taxlot information" 
+                category="City of Medford: GIS Toolbar" 
+                image="Images\tlSearch.png" />
+        <Button id="CoM_CLabelSelection" 
+                class="CLabelSelection" 
+                message="Select taxlots from the map then click this tool to get the related party info from the AS400." 
+                caption="Related Party query for mailing labels" 
+                tip="Select taxlots from the map then click this tool to get the related party info from the AS400." 
+                category="City of Medford: GIS Toolbar" 
+                image="Images\home.png" 
+                onDemand="false" />
+        <Tool id="CoM_ConvertToLatLong" 
+              class="CConvertMapToLL" 
+              message="This add-in converts Map Point to Lat / Long" 
+              caption="Convert Map Point to Lat / Long" 
+              tip="Convert Map Point to Lat / Long" 
+              category="City of Medford: GIS Toolbar" 
+              image="Images\NeedleLeftYellow2.png" />  
+      </Commands>
+      <Toolbars>
+        <Toolbar id="CoM_Toolbar" caption="City of Medford: GIS Tools" showInitially="true">
+          <Items>
+            <Button refID="CoM_AddLayers" />
+            <Button refID="CoM_CPrintMap" />
+            <Button refID="CoM_CDataFrame" />
+            <Button refID="CoM_CTaxlotSearch" />
+            <Button refID="CoM_CLabelSelection" />
+            <Tool refID="CoM_ConvertToLatLong" />
+          </Items>
+        </Toolbar>
+      </Toolbars>
+      <Editor>
+        <Extensions>
+          <Extension id="MedfordGISTools_Extension" class="CExtension" autoLoad="true" showInExtensionDialog="true"/>
+        </Extensions>
+      </Editor>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>

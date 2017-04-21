@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataConfig>
+  <Settings>
+    <Setting Name="MedfordToolsExtension_WSMEDLX_WSMEDLX" Value="http://medims/wsmedlx/WSMEDLX.asmx"/>
+    <Setting Name="MEDSDE_1_PROD_GIS" Value="Server=MEDSDE-1\MEDGISPROD;Database=medsde;User ID=webUser;Password=tabl3t!;"/>
+    <Setting Name="Editable_Server" Value="MEDSDE-1"/>
+    <Setting Name="Editable_Instance" Value="5151"/>
+    <Setting Name="Editable_Database" Value="MEDSDE"/>
+    <Setting Name="Editable_Version" Value="dbo.Default"/>
+    <Setting Name="Editable_AuthMode" Value="OSA"/>
+    <Setting Name="Readable_Server" Value="MEDSDE-1"/>
+    <Setting Name="Readable_Instance" Value="5151"/>
+    <Setting Name="Readable_Database" Value="MEDSDE"/>
+    <Setting Name="Readable_Version" Value="dbo.Default"/>
+    <Setting Name="Readable_AuthMode" Value="OSA"/>
+    <Setting Name="Enable_MedfordContent" Value="true"/>
+    <Setting Name="Enable_EditorControl" Value="true"/>
+    <Setting Name="GISConnString" Value="Server=MEDSDE-1\MEDGISPROD;Database=GIS;User ID=webuser;Password=tabl3t!;"/>
+    <Setting Name="LXConnString" Value="Server=MEDSDE-1\MEDGISPROD;Database=LXMaster;User ID=webuser;Password=tabl3t!;"/>
+    <Setting Name="Taxlots_FullName" Value="MEDSDE.DBO.TAXLOTS"/>
+    <Setting Name="Taxlots_LayerName" Value="Tax_Lots_Outlines"/>
+    <Setting Name="County_Street_Types" Value="AL,AV,BL,CR,CT,DR,HT,HW,LN,LP,PL,PR,PW,RD,RG,RP,RR,SQ,ST,TR,WY"/>
+    <Setting Name="Default_Layer_Location" Value="\\medgis1\GISData\GIS\Layers\"/>
+    <Setting Name="Task_User" Value="GISAdmin"/>
+    <Setting Name="Task_User_Pwd" Value="1ntR0duCT!on"/>
+    <Setting Name="Organization_Name" Value="City of Medford"/>
+  </Settings>
+</DataConfig>

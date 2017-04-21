@@ -1,0 +1,23 @@
+﻿How to deploy startup folder location:
+========================================================
+http://forums.arcgis.com/threads/40565-Adding-an-Add-In-Folder-programmatically?highlight=Addin+location
+
+
+
+To change version:
+========================================================
+Change these values in the Config.esriaddinx file
+
+  <Name>Medford GISAddin</Name>
+  <AddInID>{770b6b93-aa21-4021-93b6-51d74fcce31c}</AddInID>
+  <Description>A suite of tools for ArcGIS for City Of Medford employees</Description>
+  <Version>1.2.0</Version>
+  <Image>Images\Medford_GISAddin.png</Image>
+  <Author>David Renz</Author>
+  <Company>City of Medford GIS</Company>
+  <Date>1/2/2013</Date>
+  
+  
+  
+   
+

@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="WS_Medford" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="WS_Medford" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="WS_Medford">
+      <s:element name="ReturnAccountByAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAddr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByAddressResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByStreet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sStreetNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDirection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStreetName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByStreetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByStreetResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByOwner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOwner" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByOwnerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByOwnerResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByHTEQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sApp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByHTEQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByHTEQueryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByParcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sParcel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByParcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByParcelResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByParcelAndSitus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sParcel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSitus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByParcelAndSitusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByParcelAndSitusResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByManyParcels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sParcelList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByManyParcelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByManyParcelsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnStreets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sStreetName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnStreetsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnStreetsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnMaplot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sMaplot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnMaplotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnMaplotResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPermits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSitusAddr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMaplot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPermitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPermitsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnParcelValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sMaplot" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnParcelValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnParcelValuesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPlanProjectResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnAccountByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnAccountByLocationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnOLByLocationAndLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iLicenseID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnOLByLocationAndLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnOLByLocationAndLicenseResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPermit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnBPInfoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPPermits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iPermit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPPermitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnBPPermitsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanningNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanningNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPlanningNamesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanningDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanningDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPlanningDatesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCEInfoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCENames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCENamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCENamesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCEDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCEActionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEViolation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEViolationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCEViolationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEViolationText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sViolationCD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEViolationTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCEViolationTextResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPAppType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPAppTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnBPAppTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPPermitType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPPermitTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnBPPermitTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanProjectType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanProjectTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPlanProjectTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBPStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnBPStatusResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPlanStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPlanStatusResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnOLClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnOLClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnOLClassResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCEStatusResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCECaseType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCECaseTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCECaseTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEActionType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCEActionTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCEActionTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCECaseDataType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnCECaseDataTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnCECaseDataTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnNameType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAppCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNameCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnNameTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnNameTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReturnAccountByAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByAddress" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByStreetSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByStreet" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByStreetSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByStreetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByOwnerSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByOwner" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByOwnerSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByHTEQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByHTEQuery" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByHTEQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByHTEQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByParcelSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByParcel" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByParcelSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByParcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByParcelAndSitusSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByParcelAndSitus" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByParcelAndSitusSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByParcelAndSitusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByManyParcelsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByManyParcels" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByManyParcelsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByManyParcelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnStreetsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnStreets" />
+  </wsdl:message>
+  <wsdl:message name="ReturnStreetsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnStreetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnMaplotSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnMaplot" />
+  </wsdl:message>
+  <wsdl:message name="ReturnMaplotSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnMaplotResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPermitsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnPermits" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPermitsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPermitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnParcelValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnParcelValues" />
+  </wsdl:message>
+  <wsdl:message name="ReturnParcelValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnParcelValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnPlanProject" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPlanProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByLocation" />
+  </wsdl:message>
+  <wsdl:message name="ReturnAccountByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnAccountByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnOLByLocationAndLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnOLByLocationAndLicense" />
+  </wsdl:message>
+  <wsdl:message name="ReturnOLByLocationAndLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnOLByLocationAndLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBPInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBPInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPPermitsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBPPermits" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPPermitsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBPPermitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanningNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnPlanningNames" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanningNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPlanningNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanningDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnPlanningDates" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanningDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPlanningDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCEInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCEInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCENamesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCENames" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCENamesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCENamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCEData" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCEDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEActionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCEAction" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEActionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCEActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEViolationSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCEViolation" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEViolationSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCEViolationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEViolationTextSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCEViolationText" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEViolationTextSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCEViolationTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPAppTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBPAppType" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPAppTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBPAppTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPPermitTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBPPermitType" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPPermitTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBPPermitTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanProjectTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnPlanProjectType" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanProjectTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPlanProjectTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBPStatus" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBPStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBPStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnPlanStatus" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPlanStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPlanStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnOLClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnOLClass" />
+  </wsdl:message>
+  <wsdl:message name="ReturnOLClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnOLClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCEStatus" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCEStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCECaseTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCECaseType" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCECaseTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCECaseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEActionTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCEActionType" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCEActionTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCEActionTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCECaseDataTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnCECaseDataType" />
+  </wsdl:message>
+  <wsdl:message name="ReturnCECaseDataTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnCECaseDataTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnNameTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnNameType" />
+  </wsdl:message>
+  <wsdl:message name="ReturnNameTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnNameTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSMEDLXSoap">
+    <wsdl:operation name="ReturnAccountByAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on an address.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByAddressSoapIn" />
+      <wsdl:output message="tns:ReturnAccountByAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByStreet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on an address.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByStreetSoapIn" />
+      <wsdl:output message="tns:ReturnAccountByStreetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByOwner">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on an owner name.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByOwnerSoapIn" />
+      <wsdl:output message="tns:ReturnAccountByOwnerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByHTEQuery">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on a year-number value based on an HTE application, permit, etc.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByHTEQuerySoapIn" />
+      <wsdl:output message="tns:ReturnAccountByHTEQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByParcel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on a parcel.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByParcelSoapIn" />
+      <wsdl:output message="tns:ReturnAccountByParcelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByParcelAndSitus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on a parcel and situs address.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByParcelAndSitusSoapIn" />
+      <wsdl:output message="tns:ReturnAccountByParcelAndSitusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByManyParcels">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on a parcel.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByManyParcelsSoapIn" />
+      <wsdl:output message="tns:ReturnAccountByManyParcelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnStreets">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a list of distinct streets in the city.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnStreetsSoapIn" />
+      <wsdl:output message="tns:ReturnStreetsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnMaplot">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a location based on a maplot.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnMaplotSoapIn" />
+      <wsdl:output message="tns:ReturnMaplotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPermits">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns all permits for an address.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnPermitsSoapIn" />
+      <wsdl:output message="tns:ReturnPermitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnParcelValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns all values for given parcel.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnParcelValuesSoapIn" />
+      <wsdl:output message="tns:ReturnParcelValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanProject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns a specific planning project based on year and number.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnPlanProjectSoapIn" />
+      <wsdl:output message="tns:ReturnPlanProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByLocation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns an account based on a locationID from LX.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnAccountByLocationSoapIn" />
+      <wsdl:output message="tns:ReturnAccountByLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOLByLocationAndLicense">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns an Occupational License info based on a locationID and a licenseID from LX.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnOLByLocationAndLicenseSoapIn" />
+      <wsdl:output message="tns:ReturnOLByLocationAndLicenseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns an building permit info based on a locationID, year and permit number from LX.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBPInfoSoapIn" />
+      <wsdl:output message="tns:ReturnBPInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPPermits">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns an building permit info based on a locationID, year and permit number from LX.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBPPermitsSoapIn" />
+      <wsdl:output message="tns:ReturnBPPermitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanningNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the owners for a specific planning application.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnPlanningNamesSoapIn" />
+      <wsdl:output message="tns:ReturnPlanningNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanningDates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the key planning dates for a year and project number.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnPlanningDatesSoapIn" />
+      <wsdl:output message="tns:ReturnPlanningDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the code enforcement case for a year and case number.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCEInfoSoapIn" />
+      <wsdl:output message="tns:ReturnCEInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCENames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the names related to the code enforcement case for a year and case number.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCENamesSoapIn" />
+      <wsdl:output message="tns:ReturnCENamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the first tier data related to the code enforcement case for a year and case number.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCEDataSoapIn" />
+      <wsdl:output message="tns:ReturnCEDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEAction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the first tier data related to the code enforcement case for a year and case number.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCEActionSoapIn" />
+      <wsdl:output message="tns:ReturnCEActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEViolation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the first tier data related to the code enforcement case for a year and case number.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCEViolationSoapIn" />
+      <wsdl:output message="tns:ReturnCEViolationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEViolationText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This function returns the violation text for a code enforcement case based on a year ,case number and a violation code.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCEViolationTextSoapIn" />
+      <wsdl:output message="tns:ReturnCEViolationTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPAppType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the application type code description for a Building Permit code.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBPAppTypeSoapIn" />
+      <wsdl:output message="tns:ReturnBPAppTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPPermitType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the permit type description for a Building Permit type.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBPPermitTypeSoapIn" />
+      <wsdl:output message="tns:ReturnBPPermitTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanProjectType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the project type description for a planning project type.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnPlanProjectTypeSoapIn" />
+      <wsdl:output message="tns:ReturnPlanProjectTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the building permit status description.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBPStatusSoapIn" />
+      <wsdl:output message="tns:ReturnBPStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the planning project status description from a planning status code.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnPlanStatusSoapIn" />
+      <wsdl:output message="tns:ReturnPlanStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOLClass">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the occupational license class description for a given code.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnOLClassSoapIn" />
+      <wsdl:output message="tns:ReturnOLClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the code enforcement case status description for a given code enforcement status code .</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCEStatusSoapIn" />
+      <wsdl:output message="tns:ReturnCEStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCECaseType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the code enforcement case type description for a given code enforcement type code .</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCECaseTypeSoapIn" />
+      <wsdl:output message="tns:ReturnCECaseTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEActionType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the code enforcement action type description for a given code enforcement action code .</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCEActionTypeSoapIn" />
+      <wsdl:output message="tns:ReturnCEActionTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCECaseDataType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the code enforcement case data type description for a given code enforcement case data type code .</wsdl:documentation>
+      <wsdl:input message="tns:ReturnCECaseDataTypeSoapIn" />
+      <wsdl:output message="tns:ReturnCECaseDataTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnNameType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;&lt;i&gt;(Look-up function)&lt;/i&gt;&lt;/b&gt; This function returns the name type for a given application and a name code.</wsdl:documentation>
+      <wsdl:input message="tns:ReturnNameTypeSoapIn" />
+      <wsdl:output message="tns:ReturnNameTypeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSMEDLXSoap" type="tns:WSMEDLXSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReturnAccountByAddress">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByStreet">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByStreet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByOwner">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByHTEQuery">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByHTEQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByParcel">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByParcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByParcelAndSitus">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByParcelAndSitus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByManyParcels">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByManyParcels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnStreets">
+      <soap:operation soapAction="WS_Medford/ReturnStreets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnMaplot">
+      <soap:operation soapAction="WS_Medford/ReturnMaplot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPermits">
+      <soap:operation soapAction="WS_Medford/ReturnPermits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnParcelValues">
+      <soap:operation soapAction="WS_Medford/ReturnParcelValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanProject">
+      <soap:operation soapAction="WS_Medford/ReturnPlanProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByLocation">
+      <soap:operation soapAction="WS_Medford/ReturnAccountByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOLByLocationAndLicense">
+      <soap:operation soapAction="WS_Medford/ReturnOLByLocationAndLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPInfo">
+      <soap:operation soapAction="WS_Medford/ReturnBPInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPPermits">
+      <soap:operation soapAction="WS_Medford/ReturnBPPermits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanningNames">
+      <soap:operation soapAction="WS_Medford/ReturnPlanningNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanningDates">
+      <soap:operation soapAction="WS_Medford/ReturnPlanningDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEInfo">
+      <soap:operation soapAction="WS_Medford/ReturnCEInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCENames">
+      <soap:operation soapAction="WS_Medford/ReturnCENames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEData">
+      <soap:operation soapAction="WS_Medford/ReturnCEData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEAction">
+      <soap:operation soapAction="WS_Medford/ReturnCEAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEViolation">
+      <soap:operation soapAction="WS_Medford/ReturnCEViolation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEViolationText">
+      <soap:operation soapAction="WS_Medford/ReturnCEViolationText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPAppType">
+      <soap:operation soapAction="WS_Medford/ReturnBPAppType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPPermitType">
+      <soap:operation soapAction="WS_Medford/ReturnBPPermitType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanProjectType">
+      <soap:operation soapAction="WS_Medford/ReturnPlanProjectType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPStatus">
+      <soap:operation soapAction="WS_Medford/ReturnBPStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanStatus">
+      <soap:operation soapAction="WS_Medford/ReturnPlanStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOLClass">
+      <soap:operation soapAction="WS_Medford/ReturnOLClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEStatus">
+      <soap:operation soapAction="WS_Medford/ReturnCEStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCECaseType">
+      <soap:operation soapAction="WS_Medford/ReturnCECaseType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEActionType">
+      <soap:operation soapAction="WS_Medford/ReturnCEActionType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCECaseDataType">
+      <soap:operation soapAction="WS_Medford/ReturnCECaseDataType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnNameType">
+      <soap:operation soapAction="WS_Medford/ReturnNameType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSMEDLXSoap12" type="tns:WSMEDLXSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReturnAccountByAddress">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByStreet">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByStreet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByOwner">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByOwner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByHTEQuery">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByHTEQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByParcel">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByParcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByParcelAndSitus">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByParcelAndSitus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByManyParcels">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByManyParcels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnStreets">
+      <soap12:operation soapAction="WS_Medford/ReturnStreets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnMaplot">
+      <soap12:operation soapAction="WS_Medford/ReturnMaplot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPermits">
+      <soap12:operation soapAction="WS_Medford/ReturnPermits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnParcelValues">
+      <soap12:operation soapAction="WS_Medford/ReturnParcelValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanProject">
+      <soap12:operation soapAction="WS_Medford/ReturnPlanProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAccountByLocation">
+      <soap12:operation soapAction="WS_Medford/ReturnAccountByLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOLByLocationAndLicense">
+      <soap12:operation soapAction="WS_Medford/ReturnOLByLocationAndLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPInfo">
+      <soap12:operation soapAction="WS_Medford/ReturnBPInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPPermits">
+      <soap12:operation soapAction="WS_Medford/ReturnBPPermits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanningNames">
+      <soap12:operation soapAction="WS_Medford/ReturnPlanningNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanningDates">
+      <soap12:operation soapAction="WS_Medford/ReturnPlanningDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEInfo">
+      <soap12:operation soapAction="WS_Medford/ReturnCEInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCENames">
+      <soap12:operation soapAction="WS_Medford/ReturnCENames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEData">
+      <soap12:operation soapAction="WS_Medford/ReturnCEData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEAction">
+      <soap12:operation soapAction="WS_Medford/ReturnCEAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEViolation">
+      <soap12:operation soapAction="WS_Medford/ReturnCEViolation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEViolationText">
+      <soap12:operation soapAction="WS_Medford/ReturnCEViolationText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPAppType">
+      <soap12:operation soapAction="WS_Medford/ReturnBPAppType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPPermitType">
+      <soap12:operation soapAction="WS_Medford/ReturnBPPermitType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanProjectType">
+      <soap12:operation soapAction="WS_Medford/ReturnPlanProjectType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBPStatus">
+      <soap12:operation soapAction="WS_Medford/ReturnBPStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnPlanStatus">
+      <soap12:operation soapAction="WS_Medford/ReturnPlanStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnOLClass">
+      <soap12:operation soapAction="WS_Medford/ReturnOLClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEStatus">
+      <soap12:operation soapAction="WS_Medford/ReturnCEStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCECaseType">
+      <soap12:operation soapAction="WS_Medford/ReturnCECaseType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCEActionType">
+      <soap12:operation soapAction="WS_Medford/ReturnCEActionType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnCECaseDataType">
+      <soap12:operation soapAction="WS_Medford/ReturnCECaseDataType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnNameType">
+      <soap12:operation soapAction="WS_Medford/ReturnNameType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSMEDLX">
+    <wsdl:port name="WSMEDLXSoap" binding="tns:WSMEDLXSoap">
+      <soap:address location="http://medims/wsmedlx/WSMEDLX.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSMEDLXSoap12" binding="tns:WSMEDLXSoap12">
+      <soap12:address location="http://medims/wsmedlx/WSMEDLX.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

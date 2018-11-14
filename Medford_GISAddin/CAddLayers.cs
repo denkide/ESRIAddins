@@ -37,25 +37,11 @@ namespace Medford_GISAddin
         {
             ArcMap.Application.CurrentTool = null;
 
-            //System.Windows.Forms.MessageBox.Show("This is a test 2");
-
-            //if (m_dockWindow != null)
-            //    m_dockWindow = null;
-
             if (m_addLayersForm != null)
                 m_addLayersForm = null;
 
             try
             {
-                ////System.Windows.Forms.MessageBox.Show("Moving on");
-                //m_dockWindow = GetAddLayerstWindow();  //CExtension.GetAddLayerstWindow();
-
-                //if (m_dockWindow == null)
-                //    return;
-
-                ////System.Windows.Forms.MessageBox.Show("Before show");
-                //m_dockWindow.Show(!m_dockWindow.IsVisible());
-                
                 m_addLayersForm = new fmAddLayers();
                 m_addLayersForm.Show();
             }
@@ -69,18 +55,11 @@ namespace Medford_GISAddin
 
         public void closeForm()
         {
-
-            //m_dockWindow.Show(false);
-            //m_dockWindow = null;
-
             m_addLayersForm.Close();
             m_addLayersForm.Dispose();
             m_addLayersForm = null;
 
             m_bIsFormOpened = false;
- 
-            //SConst.clearLayerList();
-
         }
 
         protected override void OnUpdate()
@@ -204,13 +183,6 @@ namespace Medford_GISAddin
             ucMapService MapServicePanel = new ucMapService();
             clearCheckBoxes(MapServicePanel);
             MapServicePanel = null;
-
-
-            //    defaultPanel.Tag = pCurrentButtonTag;
-            //    defaultPanel.Dock = DockStyle.Fill;
-
-            //    pRetVal = (Control)defaultPanel;
-            //    break;
         }
     }
 

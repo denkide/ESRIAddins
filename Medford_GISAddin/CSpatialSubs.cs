@@ -81,11 +81,6 @@ namespace Medford_GISAddin
                 string s = CMedToolsSubs.returnSettingValue("Editable_Server", SConst.DataSettingsLocation);
 
                 ESRI.ArcGIS.esriSystem.IPropertySet pPropSet = new ESRI.ArcGIS.esriSystem.PropertySetClass();
-                //pPropSet.SetProperty("SERVER", "MEDSDE-1");
-                //pPropSet.SetProperty("INSTANCE", "5151");
-                //pPropSet.SetProperty("DATABASE", "MEDSDE");
-                //pPropSet.SetProperty("VERSION", "dbo.DEFAULT");
-                //pPropSet.SetProperty("AUTHENTICATION_MODE", "OSA");
 
                 pPropSet.SetProperty("SERVER", CMedToolsSubs.returnSettingValue("Editable_Server", SConst.DataSettingsLocation));
                 pPropSet.SetProperty("INSTANCE", CMedToolsSubs.returnSettingValue("Editable_Instance", SConst.DataSettingsLocation));
@@ -120,11 +115,6 @@ namespace Medford_GISAddin
             try
             {
                 ESRI.ArcGIS.esriSystem.IPropertySet pPropSet = new ESRI.ArcGIS.esriSystem.PropertySetClass();
-                //pPropSet.SetProperty("SERVER", "MEDSDE-1");
-                //pPropSet.SetProperty("INSTANCE", "5154");
-                //pPropSet.SetProperty("DATABASE", "MEDSDE");
-                //pPropSet.SetProperty("VERSION", "dbo.DEFAULT");
-                //pPropSet.SetProperty("AUTHENTICATION_MODE", "OSA");
 
                 pPropSet.SetProperty("SERVER", CMedToolsSubs.returnSettingValue("Readable_Server", SConst.DataSettingsLocation));
                 pPropSet.SetProperty("INSTANCE", CMedToolsSubs.returnSettingValue("Readable_Instance", SConst.DataSettingsLocation));
@@ -673,9 +663,7 @@ namespace Medford_GISAddin
             IFeatureLayer pFeatLyr;
             IDataset pDataset;
             ICompositeLayer pCLayer;
-            string s = "";
-            s = "Test";
-            s = "This is a checkpoint1";
+    
             for (int i = 0; i < pMap.LayerCount; i++)
             {
                 if (pMap.get_Layer(i).Name.ToUpper() == sName.ToUpper())
@@ -696,8 +684,6 @@ namespace Medford_GISAddin
                     }
                 }
             }
-
-            s = "This is a checkpoint2";
 
             try
             {
@@ -737,10 +723,6 @@ namespace Medford_GISAddin
             {
                 s = "The error is: " + ex.Message;
             }
-
-            
-            s = "This is a checkpoint3";
-
 
             //the only way to get here is if the layer could not be found. Return Nothing
             return null;
@@ -829,7 +811,6 @@ namespace Medford_GISAddin
             {
                 string s = ex.Message;
                 s += "\r\n\r\n" + ex.InnerException.Message;
-                s += "\r\n\r\nthat was that";
 
                 return;
             }

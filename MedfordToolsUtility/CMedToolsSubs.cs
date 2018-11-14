@@ -194,14 +194,7 @@ namespace MedfordToolsUtility
 
             if (sStreet.IndexOf(" ") > 0)
             {
-                //if (sStreetsCollection.Contains(sStreet.Substring(sStreet.LastIndexOf(" ") + 1)))
-                    sRetVal = sStreet.Substring(sStreet.LastIndexOf(" ") + 1);
-                //else 
-                //{
-                //    // go to the previous space ... since that is the street type
-                //    string sTemp = sStreet.Substring(0, sStreet.LastIndexOf(" "));
-                //    sRetVal = sTemp.Substring(sTemp.LastIndexOf(" ") + 1);
-                //}
+                sRetVal = sStreet.Substring(sStreet.LastIndexOf(" ") + 1);      
             }
             else
             {
@@ -534,7 +527,6 @@ namespace MedfordToolsUtility
                 foreach (XmlNode node in nodes)
                 {
                     dctRetVal.Add(node.Attributes[0].Value.ToString(), node.Attributes[1].Value.ToString());
-                    //dctRetVal.Add(node[.Attributes[0].Value.ToString(), node.Attributes[1].Value.ToString());
                 }
             }
             catch (Exception ex)
@@ -551,22 +543,9 @@ namespace MedfordToolsUtility
             {
                 string sPath = @"I:\ArcGISAddin\ConfigFiles\MedfordTools"; //System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
 
-                string sDataSettingsLoc = "DataSettings.xml"; // readRegKey(Registry.LocalMachine, "SOFTWARE\\City of Medford", "DataSettingsLocation");
-                string sPrinterSettingsLoc = "PrintSettings.xml"; // readRegKey(Registry.LocalMachine, "SOFTWARE\\City of Medford", "PrinterSettingsLocation");
-                string sLayerSettingsLoc = "LayerSettings.xml"; // readRegKey(Registry.LocalMachine, "SOFTWARE\\City of Medford", "LayerSettingsLocation");
-
-                //System.Windows.Forms.MessageBox.Show("Path: " + sPath);
-
-                //string sDataSettingsLoc = readRegKey(Registry.LocalMachine, "SOFTWARE\\City of Medford", "DataSettingsLocation");
-                //string sPrinterSettingsLoc = readRegKey(Registry.LocalMachine, "SOFTWARE\\City of Medford", "PrinterSettingsLocation");
-                //string sLayerSettingsLoc = readRegKey(Registry.LocalMachine, "SOFTWARE\\City of Medford", "LayerSettingsLocation");
-                
-                //MessageBox.Show("Testing ---> CMedtoolsSubs.cs :: ensureSettingsFile");
-                //string sDataSettingsLoc = "D:\\_David\\_Development\\Apps\\ArcObjects\\MefordGISTools\\MedfordGISTools\\MedfordToolsExtension\\Cfg\\DataSettings.xml";
-                //string sPrinterSettingsLoc = "D:\\_David\\_Development\\Apps\\ArcObjects\\MefordGISTools\\MedfordGISTools\\MedfordToolsExtension\\Cfg\\PrintSettings.xml";
-                //string sLayerSettingsLoc = "D:\\_David\\_Development\\Apps\\ArcObjects\\MefordGISTools\\MedfordGISTools\\MedfordToolsExtension\\Cfg\\LayerSettings.xml";
-
-                //System.Windows.Forms.MessageBox.Show("Path: " + sPath + "\\" + sDataSettingsLoc);
+                string sDataSettingsLoc = "DataSettings.xml"; // readRegKey(Registry.LocalMachine, "SOFTWARE\\xxxx", "DataSettingsLocation");
+                string sPrinterSettingsLoc = "PrintSettings.xml"; // readRegKey(Registry.LocalMachine, "SOFTWARE\\xxxx", "PrinterSettingsLocation");
+                string sLayerSettingsLoc = "LayerSettings.xml"; // readRegKey(Registry.LocalMachine, "SOFTWARE\\xxxx", "LayerSettingsLocation");
 
                 if (File.Exists(sPath + "\\" + sDataSettingsLoc))
                 {
@@ -722,19 +701,6 @@ namespace MedfordToolsUtility
             System.Data.DataSet ds = oData.returnTaxCode();
 
             Collection<string> col = new Collection<string>();
-
-            //try
-            //{
-            //    foreach (System.Data.DataRow dr in ds.Tables[0].Rows)
-            //    {
-            //        dct.Add(dr["CLASS"].ToString(), dr["CLASS_DESC"].ToString());
-            //    }
-            //}
-            //catch
-            //{
-            //    return null;
-            //}
-
             return col;  //CMedToolsSubs.returnConfigNode("PropClass", "", SettingsLocation);
         }
 
